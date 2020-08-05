@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fireapp">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/dustbin"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/dustbin"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <service android:name="com.example.fireapp.YourService" />
+
+        <activity android:name="com.example.fireapp.ClearanceActivity"
+                    android:launchMode="singleInstance">
+
+            <intent-filter>
+                <action android:name="com.example.fireapp.CLEARANCEACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.fireapp.HomeActivity" />
+        <activity android:name="com.example.fireapp.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.fireapp.MainActivity" />
+    </application>
+
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+</manifest>
